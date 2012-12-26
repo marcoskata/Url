@@ -1,0 +1,30 @@
+%html
+    
+    %head
+        %title URL Shortener
+        %link(rel="stylesheet" type="text/css" href="bootstrap.css")
+        %link(rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Permanent+Marker")
+    %body 
+        %div{:class => "row-fluid"}
+            %div{:class => "span4 offset4", :id => "title"}
+                %h1 URL SHORTENER
+        %div{:class => "row-fluid"}
+            %div{:class => "span8 offset4", :id => "formu"}
+                =yield
+                %form(action="/" method="POST")
+                    %label(for="url")
+                    %input(type="text" name="url" id="url" placeholder="Introduce URL to short" )
+                    %label(for="custom") Custom Shortened URL(optional)
+                    %input(type="text" name="custom" id="custom" placeholder="Introduce custom URL")
+                    %input(type="submit" value="Shorten" class="shorten" )
+
+                %form(action="/find_by_ID" method="POST")
+                    %label(for="url")
+                    %input(type="text" name="url" id="url" placeholder="Introduce ID to find")
+                    %input(type="submit" value="Find by ID"  class="shorten")
+
+                %form(action="/find_by_URL" method="POST")
+                    %label(for="url")
+                    %input(type="text" name="url" id="url" placeholder="Introduce URL to find")
+                    %input(type="submit" value="Find by URL" class="shorten")
+                    %a.button{:href => "/list", :id => "todos"}Show ALL

@@ -1,0 +1,9 @@
+%p{:id => "line"} 
+    %b URL: 
+    #{@url.url} 
+    -if @url.custom
+        %b CUSTOM: 
+        #{@url.custom}
+    %b ID: 
+    #{@url.id} 
+        

@@ -1,0 +1,9 @@
+%p 
+%b ID:
+%a(href="http://#{address}/#{url.id.to_s(36)}") #{url.id.to_s(36)}
+%b URL:
+%a(href="#{url.url}") #{url.url}  
+-if url.custom != ''
+    %b CUSTOM:
+    %a(href="http://#{address}/#{url.custom}") #{url.custom}
+    
